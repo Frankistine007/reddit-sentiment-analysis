@@ -1,0 +1,42 @@
+{
+  "summary": {
+    "model": "random_forest",
+    "accuracy": 0.7847,
+    "f1_macro": 0.7819,
+    "f1_weighted": 0.7819,
+    "inference_sec": 0.75
+  },
+  "per_class": {
+    "negative": {
+      "precision": 0.7861216730038023,
+      "recall": 0.6908939014202172,
+      "f1-score": 0.7354379724321921,
+      "support": 1197.0
+    },
+    "neutral": {
+      "precision": 0.7694463910301331,
+      "recall": 0.9172932330827067,
+      "f1-score": 0.836890243902439,
+      "support": 1197.0
+    },
+    "positive": {
+      "precision": 0.8030575539568345,
+      "recall": 0.746031746031746,
+      "f1-score": 0.7734950194889563,
+      "support": 1197.0
+    },
+    "accuracy": 0.78473962684489,
+    "macro avg": {
+      "precision": 0.7862085393302567,
+      "recall": 0.78473962684489,
+      "f1-score": 0.7819410786078625,
+      "support": 3591.0
+    },
+    "weighted avg": {
+      "precision": 0.7862085393302567,
+      "recall": 0.78473962684489,
+      "f1-score": 0.7819410786078625,
+      "support": 3591.0
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "summary": {
+    "model": "roberta-base",
+    "accuracy": 0.9028,
+    "f1_macro": 0.9029,
+    "f1_weighted": 0.9029,
+    "inference_sec": 26.62
+  },
+  "per_class": {
+    "negative": {
+      "precision": 0.8762541806020067,
+      "recall": 0.8755221386800334,
+      "f1-score": 0.875888006686168,
+      "support": 1197.0
+    },
+    "neutral": {
+      "precision": 0.9406276505513147,
+      "recall": 0.9264828738512949,
+      "f1-score": 0.9335016835016835,
+      "support": 1197.0
+    },
+    "positive": {
+      "precision": 0.8922697368421053,
+      "recall": 0.9064327485380117,
+      "f1-score": 0.899295482801492,
+      "support": 1197.0
+    },
+    "accuracy": 0.9028125870231133,
+    "macro avg": {
+      "precision": 0.9030505226651422,
+      "recall": 0.9028125870231133,
+      "f1-score": 0.9028950576631144,
+      "support": 3591.0
+    },
+    "weighted avg": {
+      "precision": 0.9030505226651422,
+      "recall": 0.9028125870231133,
+      "f1-score": 0.9028950576631146,
+      "support": 3591.0
+    }
+  }
+}

@@ -1,0 +1,74 @@
+# =====================================================
+# Central configuration — every module reads from here
+# =====================================================
+
+data:
+  # --- Reddit fetching (optional; needs PRAW credentials) ---
+  reddit:
+    client_id: "YOUR_CLIENT_ID"          # from https://www.reddit.com/prefs/apps
+    client_secret: "YOUR_CLIENT_SECRET"
+    user_agent: "sentiment-scraper by u/YOUR_USERNAME"
+    subreddits: ["technology", "movies", "AskReddit"]
+    posts_per_subreddit: 4000            # aim for 10k+ total
+    listing: "top"                       # hot | new | top
+    time_filter: "year"
+    include_comments: true               # comments give far more text volume
+    comments_per_post: 20
+
+  # --- Files ---
+  raw_csv: "data/raw_reddit_posts.csv"
+  premade_csv: "data/Reddit_Data.csv"    # fallback: Kaggle "Twitter & Reddit Sentiment" dataset
+  processed_csv: "data/processed.csv"
+  text_column: "clean_comment"           # column names in the premade dataset
+  label_column: "category"               # -1 / 0 / 1  → mapped to 0 / 1 / 2
+
+preprocessing:
+  min_words: 3
+  max_words: 256
+  lowercase: true
+  remove_urls: true
+  remove_special_chars: true
+  balance_strategy: "undersample"        # undersample | oversample | none
+
+split:
+  test_size: 0.15
+  val_size: 0.15
+  random_state: 42
+  stratify: true
+
+traditional:
+  tfidf:
+    max_features: 20000
+    ngram_range: [1, 2]
+    min_df: 2
+
+ann:
+  hidden_dims: [512, 128]
+  dropout: 0.3
+  lr: 0.001
+  batch_size: 64
+  epochs: 15
+  patience: 3
+
+transformer:
+  models:                                # experiment with multiple transformers
+    - "bert-base-uncased"
+    - "distilbert-base-uncased"
+    - "roberta-base"
+  max_length: 128
+  batch_size: 16
+  epochs: 3
+  lr: 2.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  patience: 2
+
+output:
+  models_dir: "outputs/models"
+  plots_dir: "outputs/plots"
+  reports_dir: "outputs/reports"
+
+labels:
+  0: "negative"
+  1: "neutral"
+  2: "positive"

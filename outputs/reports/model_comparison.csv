@@ -1,0 +1,8 @@
+model,accuracy,f1_macro,f1_weighted,inference_sec
+bert-base-uncased,0.9234,0.9235,0.9235,29.35
+distilbert-base-uncased,0.914,0.914,0.914,14.8
+roberta-base,0.9028,0.9029,0.9029,26.62
+linear_svm,0.8513,0.8502,0.8502,0.13
+logistic_regression,0.824,0.8231,0.8231,0.24
+random_forest,0.7847,0.7819,0.7819,0.75
+ann_tfidf,0.763,0.7625,0.7625,0.68
