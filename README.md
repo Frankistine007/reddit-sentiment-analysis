@@ -1,5 +1,7 @@
 # Reddit Sentiment Classification — Traditional ML → ANN → Transformers
 
+⭐ Full results, confusion matrices, and analysis: [RESULTS.md](RESULTS.md)
+
 Production-style, fully OOP pipeline that classifies Reddit posts into
 **negative / neutral / positive**, benchmarking classical models against
 deep learning and multiple transformer architectures.
